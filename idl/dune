@@ -1,0 +1,20 @@
+(library
+ (name app_idl)
+ (public_name app-idl)
+ (libraries
+   astring
+   cohttp
+   cohttp-lwt
+   cohttp-lwt-unix
+   conduit-lwt-unix
+   fmt
+   lwt
+   lwt.unix
+   result
+   rpclib.core
+   rpclib.json
+   rpclib-lwt
+   uri
+ )
+ (wrapped false)
+ (preprocess (pps ppx_deriving_rpc)))

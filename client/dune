@@ -1,0 +1,22 @@
+(executable
+  (name app_client)
+  (modes exe)
+  (libraries
+   app-idl
+   astring
+   cohttp
+   cohttp-lwt
+   cohttp-lwt-unix
+   conduit-lwt-unix
+   fmt
+   lwt
+   lwt.unix
+   result
+   rpclib.core
+   rpclib.json
+   rpclib-lwt
+   ssl
+   uri
+  )
+  (preprocess (pps ppx_deriving_rpc))
+)
