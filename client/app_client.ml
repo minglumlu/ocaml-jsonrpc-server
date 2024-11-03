@@ -27,7 +27,7 @@ let main () =
 
     (* HTTP *)
     let req_body = Jsonrpc.string_of_call call |> Cohttp_lwt.Body.of_string in
-    Cohttp_lwt_unix.Client.post ~body:req ~ctx server_uri
+    Cohttp_lwt_unix.Client.post ~body:req_body ~ctx server_uri
     >>= fun (_resp, body) ->
     (*
     let code = resp |> Cohttp_lwt.Response.status |> Cohttp.Code.code_of_status in
